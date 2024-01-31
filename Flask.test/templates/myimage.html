@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script type="text/javascript"></script>
+    <script>
+
+        function randomnumber(min, max){
+            var number = Math.floor(Math.random() * (max - min + 1)) + min;
+            return number;
+        }
+
+        var site = randomnumber(1, 7)
+
+        if (site==1) {
+        page="myimage1.html";
+        }
+       
+        else if (site==2) {
+        page="myimage2.html";
+        }
+
+        else if (site==3) {
+        page="myimage3.html";
+        }
+
+        else if (site==4) {
+        page="myimage4.html";
+        }
+
+        else if (site==5) {
+        page="myimage5.html";
+        }
+
+        else if (site==6) {
+        page="myimage6.html";
+        }
+
+        else if (site==7) {
+        page="myimage7.html";
+        }
+       
+        location.replace(''+ page +'');
+        </script>
+
+</body>
+</html>

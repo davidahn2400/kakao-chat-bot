@@ -1,9 +1,11 @@
 # app.py
 from flask import Flask, render_template
-import random
+# import random 주석처리를 한 문장들을 실행한다고 했을때 사용
 
 #Flask 객체 인스턴스 생성
 app = Flask(__name__)
+
+"""
 
 luck = ["myimage1", "myimage2", "myimage3", "myimage4", "myimage5", 
         "myimage6", "myimage7"]
@@ -45,13 +47,14 @@ if menu == "myimage7":
   def myimage7():
     return render_template("myimage7.html")
 
+"""
+
 
 @app.route('/') # 접속하는 url
 def index():
   return render_template('index.html')
 
-if __name__=="__main__":
-  app.run()
+app.run()
   # host 등을 직접 지정하고 싶다면
   # app.run(host="127.0.0.1", port="5000", debug=True)
 
