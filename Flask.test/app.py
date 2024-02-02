@@ -1,9 +1,19 @@
 # app.py
-from flask import Flask, render_template
-# import random 주석처리를 한 문장들을 실행한다고 했을때 사용
+from flask import Flask, jsonify, request
+from flask import Blueprint
+from flask import send_file
 
-#Flask 객체 인스턴스 생성
-app = Flask(__name__)
+class ImageRouters:
+    @staticmethod
+    def get_blueprint(mongodb):
+        api_blueprint = Blueprint('api', __name__)
+
+        @api_blueprint.route('/image/<image_filename>', methods=['GET'])
+        def get_image(image_filename):
+            image_path = 'C:/Users/User/Documents/kakao-chat-bot/Flask.test/static/img'
+            + image_filename + '.png'
+            return send_file(image_path, mimetype='image/png')
+        return api_blueprint
 
 """
 
@@ -50,13 +60,5 @@ if menu == "myimage7":
 """
 
 
-@app.route('/') # 접속하는 url
-def index():
-  return render_template('index.html')
-
-app.run()
   # host 등을 직접 지정하고 싶다면
   # app.run(host="127.0.0.1", port="5000", debug=True)
-
-
-  
